@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.w-124 {
+    width: 31rem; /* 124 değerine sahip özel genişlik sınıfı */
+  }
