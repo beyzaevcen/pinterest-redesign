@@ -1,0 +1,12 @@
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns in the grid */
+    gap: 10px; /* Gap between grid items */
+  }
+  
+  .grid-item {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  

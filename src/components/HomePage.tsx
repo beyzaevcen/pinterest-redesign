@@ -1,5 +1,10 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CreatePost from "./CreatePost";
+import Navbar from "./Navbar";
 
 export function HomePage() {
-  return <div></div>;
+  return <div className="App"></div>;
 }
+
+export default HomePage;

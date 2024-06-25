@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../images/logo.png"; // Logo resmi
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,11 +10,16 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons"; // FontAwesome iconları
 
-export default function Navbar() {
-  const [selectedButton, setSelectedButton] = useState("For you");
+const Navbar: React.FC = () => {
+  const [selectedButton, setSelectedButton] = useState<string>("For you");
+  const navigate = useNavigate();
 
-  const handleButtonClick = (buttonName) => {
+  const handleButtonClick = (buttonName: string) => {
     setSelectedButton(buttonName);
+  };
+
+  const handleClick = () => {
+    navigate("/createPost");
   };
 
   return (
@@ -65,7 +71,10 @@ export default function Navbar() {
         </li>
 
         <li>
-          <button className="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2">
+          <button
+            onClick={handleClick}
+            className="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2"
+          >
             Create
           </button>
         </li>
@@ -84,4 +93,6 @@ export default function Navbar() {
       </ul>
     </div>
   );
-}
+};
+
+export default Navbar;

@@ -1,16 +1,32 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomePage } from "./components/HomePage";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CreatePost from "./components/CreatePost";
+import Images from "./components/data/Images";
+import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
 
-function App() {
+export function App() {
   return (
-    <Router>
-      <div>
+    <div className="App">
+      <BrowserRouter>
+        <Navbar /> <AppContent />
+      </BrowserRouter>
+    </div>
+  );
+}
+
+function AppContent() {
+  return (
+    <div className="container">
+      <div className="content">
         <Routes>
-          <Route path="/" element={<Navbar />} />
+          <Route path="/createPost" element={<CreatePost />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/i" element={<Images />} />
+          {/* Diğer rotalarınızı buraya ekleyebilirsiniz */}
         </Routes>
       </div>
-    </Router>
+    </div>
   );
 }
 
