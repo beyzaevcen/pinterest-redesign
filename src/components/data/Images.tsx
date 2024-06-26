@@ -16,8 +16,8 @@ const Images = () => {
     const fetchPhotos = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos/random/?client_id=fFSyfT045wBN4Mw1ZdYfNA0wQw5A23ABXrSphgjzLlU&count=10`
-        ); // Fetching 10 photos to ensure we have enough for multiple rows
+          `https://api.unsplash.com/photos/random/?client_id=fFSyfT045wBN4Mw1ZdYfNA0wQw5A23ABXrSphgjzLlU&count=20`
+        ); // Fetching more photos to ensure we have enough for a full layout
         if (!response.ok) {
           throw new Error("Failed to fetch photos");
         }
@@ -35,12 +35,9 @@ const Images = () => {
     <div className="image-grid">
       {/* Render photos in a grid layout */}
       {photos.map((photo) => (
-        <img
-          key={photo.id}
-          src={photo.urls.regular}
-          alt={photo.alt_description}
-          className="grid-item"
-        />
+        <div key={photo.id} className="grid-item">
+          <img src={photo.urls.regular} alt={photo.alt_description} />
+        </div>
       ))}
     </div>
   );

@@ -23,9 +23,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center h-24 max-w-[1240px] mx-auto ">
+    <div className="flex items-center justify-between h-24 max-w-[1240px] mx-auto px-4">
       {/* Logo ve Pinterest yazısı sol tarafta */}
-      <div className="flex items-center space-x-4 pr-8">
+      <div className="flex items-center space-x-4">
         <img src={logo} alt="Logo" className="h-14 w-14" />
         <h1 className="text-3xl font-bold text-[#E60728]">Pinterest</h1>
       </div>

@@ -21,8 +21,7 @@ function AppContent() {
       <div className="content">
         <Routes>
           <Route path="/createPost" element={<CreatePost />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/i" element={<Images />} />
+          <Route path="/" element={<Images />} />
           {/* Diğer rotalarınızı buraya ekleyebilirsiniz */}
         </Routes>
       </div>

@@ -1,12 +1,43 @@
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns in the grid */
-    gap: 10px; /* Gap between grid items */
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px auto;
+  columns: 4; /* Number of columns */
+  column-gap: 40px; /* Gap between columns */
+  padding-left: 100px; /* Center align with padding */
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-item img {
+  width: 100%;
+  margin-bottom: 20px; /* Increased space between images */
+  max-width: 100%;
+  break-inside: avoid; /* Prevent images from breaking within columns */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .image-grid {
+    columns: 3;
   }
-  
-  .grid-item {
-    width: 100%;
-    height: auto;
-    display: block;
+}
+
+@media (max-width: 900px) {
+  .image-grid {
+    columns: 2;
   }
-  
+}
+
+@media (max-width: 600px) {
+  .image-grid {
+    columns: 1;
+  }
+}
